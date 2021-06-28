@@ -1,14 +1,14 @@
 import Card from "./Card";
 
 const MainContainer = (props) => {
-  const { cards, shuffle } = props;
+  const { cards, change } = props;
 
   return ( 
     <div className="MainContainer">
       {
-        cards.map((card) => {
+        cards.map((card, index) => {
           return (
-            <Card card={card} shuffle={shuffle}/>
+            <Card card={card} key={index} change={change} id={index}/>
           )
         })
       }
