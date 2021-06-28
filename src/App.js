@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header';
+import { useState } from 'react';
+import images from './images';
+import MainContainer from './components/MainContainer';
 
 function App() {
+  const [cards, setCards] = useState(
+    [
+      {
+        name: 'Artemis',
+        img: images[0],
+      },
+      {
+        name: 'Barbara',
+        img: images[1]
+      },
+      {
+        name: 'Ben the Soldier',
+        img: images[2]
+      },
+      {
+        name: 'Bill Ponderosa',
+        img: images[3]
+      },
+      {
+        name: 'Bruce Mathis',
+        img: images[4]
+      },
+      {
+        name: 'Carmen',
+        img: images[5]
+      },
+      {
+        name: 'Charlie',
+        img: images[6]
+      },
+      {
+        name: "Charlie's Mom",
+        img: images[7]
+      },
+    ]
+  )
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <MainContainer cards={cards} />
     </div>
   );
 }
