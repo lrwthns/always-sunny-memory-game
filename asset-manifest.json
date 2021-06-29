@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/always-sunny-memory-game/static/css/main.01643a43.chunk.css",
+    "main.css": "/always-sunny-memory-game/static/css/main.dc37e63b.chunk.css",
     "main.js": "/always-sunny-memory-game/static/js/main.d21d46f0.chunk.js",
     "main.js.map": "/always-sunny-memory-game/static/js/main.d21d46f0.chunk.js.map",
     "runtime-main.js": "/always-sunny-memory-game/static/js/runtime-main.af5fac6b.js",
@@ -8,7 +8,7 @@
     "static/js/2.7eaceaaa.chunk.js": "/always-sunny-memory-game/static/js/2.7eaceaaa.chunk.js",
     "static/js/2.7eaceaaa.chunk.js.map": "/always-sunny-memory-game/static/js/2.7eaceaaa.chunk.js.map",
     "index.html": "/always-sunny-memory-game/index.html",
-    "static/css/main.01643a43.chunk.css.map": "/always-sunny-memory-game/static/css/main.01643a43.chunk.css.map",
+    "static/css/main.dc37e63b.chunk.css.map": "/always-sunny-memory-game/static/css/main.dc37e63b.chunk.css.map",
     "static/js/2.7eaceaaa.chunk.js.LICENSE.txt": "/always-sunny-memory-game/static/js/2.7eaceaaa.chunk.js.LICENSE.txt",
     "static/media/index.css": "/always-sunny-memory-game/static/media/Textile.b7ce1e8b.ttf",
     "static/media/artemis.cf64fd40.jpg": "/always-sunny-memory-game/static/media/artemis.cf64fd40.jpg",
@@ -50,7 +50,7 @@
   "entrypoints": [
     "static/js/runtime-main.af5fac6b.js",
     "static/js/2.7eaceaaa.chunk.js",
-    "static/css/main.01643a43.chunk.css",
+    "static/css/main.dc37e63b.chunk.css",
     "static/js/main.d21d46f0.chunk.js"
   ]
 }
