@@ -19,10 +19,10 @@ html, body, #root {
 }
 
 .Scoreboard {
-  padding-top: 1.5rem;
-  color: white;
+  padding-top: 2.5rem;
+  color: rgb(206, 206, 206);
   font-size: 1.5rem;
-  font-family: 'Helvetica';
+  font-family: 'monospace';
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -39,11 +39,15 @@ html, body, #root {
 .title {
   font-family: 'Textile';
   color: white;
-  font-size: 4rem;
+  font-size: 5rem;
   height: 8rem;
   padding-top: 2rem;
   text-align: center;
   box-sizing: border-box;
+}
+
+.title:hover {
+  color: rgb(255, 217, 0);
 }
 
 .Card {
@@ -53,14 +57,60 @@ html, body, #root {
   padding: 1rem;
   box-sizing: border-box;
   font-family: monospace;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
 }
 
 .Card:hover {
-  border: 2px solid yellow;
+  border: 2px solid rgb(0, 0, 0);
+  background: rgb(255, 217, 0);
+}
+
+.Card:active {
+  transform: translateY(0.2rem);
 }
 
 img {
   height: 200px;
   width: 200px;
+}
+
+.Notice {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-container {
+  background:rgb(255, 255, 255);
+  height: 400px;
+  width: 800px;
+  font-size: 5rem;
+  font-family: 'Textile';
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.message-container > button {
+  font-family: monospace;
+  font-size: 1.5rem;
+  padding: 1rem;
+  border: none;
+}
+
+.message-container > button:hover {
+  background: rgb(255, 217, 0);
+}
+
+.message-container > button:focus {
+  outline: none;
 }
