@@ -201,14 +201,11 @@ function App() {
         } else {
           alert('You lose!');
         }
-      } 
-      const shuffled = cards.sort(() => Math.random() - 0.5);
-      setCards(shuffled);
-      console.log(cards);  
+      }
     } else {
       notInitialRender.current = true;
     }
-  }, [cards, score]);
+  }, [score]);
 
   const changeState = (id) => {
     console.log(id);
@@ -221,7 +218,8 @@ function App() {
             beenClicked: true,
           },
           ...cards.slice(id+1)
-        ]     
+        ].sort(() => Math.random() - 0.5)
+        // shuffles the array    
         );
         setScore({
           ...score,
@@ -248,11 +246,11 @@ function App() {
         setScore({
           ...score,
           currentScore: 0,
+          maxScore: false,
         })
       }
     }
   };
-  
 
   return (
     <div className="App">
