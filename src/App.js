@@ -1,5 +1,5 @@
 import Header from './components/Header';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import images from './images';
 import MainContainer from './components/MainContainer';
 
@@ -185,46 +185,62 @@ function App() {
   const [score, setScore] = useState(
     {
       currentScore: 0,
-      bestScore: 0
+      bestScore: 0,
+      maxScore: false,
     }
   );
 
   const [cards, setCards] = useState(initialState);
+  const notInitialRender = useRef(false);
 
   useEffect(() => {
-    console.log(cards);
-    console.log(score);
-  });
+    if (notInitialRender.current) {    
+      if (score.currentScore === 0) {
+        if (score.maxScore) {
+          alert('You win! Max score!')
+        } else {
+          alert('You lose!');
+        }
+      } 
+      const shuffled = cards.sort(() => Math.random() - 0.5);
+      setCards(shuffled);
+      console.log(cards);  
+    } else {
+      notInitialRender.current = true;
+    }
+  }, [cards, score]);
 
   const changeState = (id) => {
     console.log(id);
     if (cards[id].beenClicked === false) {
-      setCards([
-        ...cards.slice(0, id), 
-        {
-          ...cards[id],
-          beenClicked: true,
-        },
-        ...cards.slice(id+1)
-      ]     
-      );
-      setScore({
-        ...score,
-        currentScore: score.currentScore+1,
-      })
+      if (score.currentScore !== 34) {
+        setCards([
+          ...cards.slice(0, id), 
+          {
+            ...cards[id],
+            beenClicked: true,
+          },
+          ...cards.slice(id+1)
+        ]     
+        );
+        setScore({
+          ...score,
+          currentScore: score.currentScore+1,
+          maxScore: false,
+        })
+      } else {
+        setCards(initialState);
+        setScore({
+          currentScore: 0,
+          bestScore: 35,
+          maxScore: true,
+        })
+      }
     } else {
       setCards(initialState);
-      setCards([
-        ...cards.slice(0, id), 
-        {
-          ...cards[id],
-          beenClicked: true,
-        },
-        ...cards.slice(id+1)
-      ]     
-      );
       if (score.bestScore < score.currentScore) {
         setScore({
+          maxScore: false,
           bestScore: score.currentScore,
           currentScore: 0,
         })
